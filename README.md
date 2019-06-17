@@ -2,46 +2,41 @@
 
 ## Table of Contents
 
-- [Using this template](#using-this-template)
-- [Naming](#naming)
-- [Adding functionality](#adding-functionality)
-- [Examples](#examples)
+- [Usando este template](#usando-este-template)
+- [Nome](#nome)
+- [Adicionando funcionalidade](#adicionando-funcionalidade)
+- [Exemplos](#exemplos)
 - [Development Tasks](#development-tasks)
-- [Packaging and Distribution](#packaging-and-distribution)
-- [License](#license)
-
+- [Instalar dependências](#instalar-dependencias)
+- [Embalagem e Distribuição](embalagem-e-distribuicao)
 
 ## Usando este template
 
-Este template assume que você está criando um novo plugin cmd2_thg_ chamado `myplugin`. Seu
-plugin terá um nome diferente. Você precisará renomear alguns dos arquivos e
-diretórios neste template. Não esqueça de modificar as importações e o `setup.py`.
+Este template assume que você está criando um novo plugin para o [THG Framework](https://github.com/darkcode357/thg-framework). Você precisará renomear alguns arquivos e
+diretórios deste template e instalar dependências. Não se esqueça de modificar as importações e o `setup.py`.
 
-Você provavelmente também vai querer reescrever o README descrevendo oque o seu plugin pode fazer :)
-#gddev
-
-## nome 
+Uma boa descrição do seu plugin no README, ajudaria demais devs que queiram contribuir.
 
 
-Você deve prefixar o nome do seu projeto com `cmd2-thg-`. Dentro desse projeto,
+## Nome 
+
+Encoraja-se o uso do prefixo: `cmd2-thg-` como convenção de desenvolvimento. Dentro desse projeto,
 você deve ter um pacote com o prefixo `cmd2_thg_`.
 
 
 ## Adicionando funcionalidade
 
 Existem muitas maneiras de adicionar funcionalidades ao `thg` usando um plugin. 
-A maioria dos plugins
-será implementado como um mixin. Um mixin é uma classe que encapsula e injeta
-o código em outra classe(class principal). Desenvolvedores que usam um plugin no  `thg`,
+A maioria dos plugins será implementado como um mixin. No projeto mixin é uma classe que encapsula e injeta
+o código em outra classe (class principal). Desenvolvedores que usam um plugin no `thg`,
 irá injetar o código do plugin em sua subclasse de `THGBASECONSOLE(Cmd):`.
-
 
 
 ### Mixin e Inicialização
 
-O exemplo a seguir mostra como e o inicio de um plugin e como funciona o plugin
+O exemplo a seguir mostra como e o inicio de um plugin e como funciona.
 
-Aqui está o plugin:
+O plugin em si:
 
 ```python
 class MyPlugin:
@@ -52,7 +47,7 @@ class MyPlugin:
 
 ```
 
-exemplo de um aplicativo que usa o plug-in:
+Exemplo de aplicativo que usa o plug-in:
 
 ```python
 import cmd2
@@ -69,12 +64,12 @@ class Example(cmd2_thg_.MyPlugin, cmd2.Cmd):
 ```
 
 
-observe como o plugin deve ser herdado antes do `cmd2.Cmd`. Isto é
+Observe como o plugin deve ser herdado antes do `cmd2.Cmd`. Isso é
 necessário por dois motivos:
 
-- O método `cmd.Cmd .__ init __ ()` na biblioteca padrão do python não ira ser chama
-  - `super().__init__()`.Devido a esse descuido, se você não herdar do `MyPlugin` o
-  - `MyPlugin.__init__()`método nunca será chamado
+- O método `cmd.Cmd .__ init __ ()` na biblioteca padrão do python não ira ser chamada
+  - `super().__init__()`. Devido a esse descuido, se você não herdar do `MyPlugin` o
+  - `MyPlugin.__init__()` método nunca será chamado
 - Você pode querer que seu plugin seja capaz de sobrescrever métodos  `cmd2.Cmd`.
   Se você herdar o plugin depois do `cmd2.Cmd`, a ordem de resolução dos métodos do python
   irá chamar os métodos `cmd2.Cmd` antes de chamar os metodos do seu plugin.
@@ -83,8 +78,8 @@ necessário por dois motivos:
 
 ### Adicionar comandos
 
-Seu plugin pode adicionar comandos visíveis ao usuário. Você faz do mesmo jeito 
-que você fazeria em um aplicativo `cmd2.Cmd`:
+Seu plugin pode adicionar comandos visíveis ao usuário. Do mesmo jeito 
+que seria feito em um aplicativo `cmd2.Cmd`:
 
 ```python
 class MyPlugin:
@@ -96,7 +91,7 @@ class MyPlugin:
 
 
 Você tem os todos os recursos dentro de um plugin, que contruiu dentro de um
-aplicativo `cmd2.Cmd`, incluindo a análise de argumentos por meio de `decoradores` e ajuda  para personalizada
+aplicativo `cmd2.Cmd`, incluindo a análise de argumentos por meio de `decoradores` e ajuda para personalizar
 métodos.
 
 
@@ -147,7 +142,7 @@ métodos são misturados no aplicativo `cmd2` e essa convenção de nomenclatura
 evitar a substituição não intencional do método.
 
 
-exemplo simples
+Exmeplo simples:
 
 ```python
 class MyPlugin:
@@ -181,9 +176,7 @@ sua documentação para que os usuários do seu plugin saibam o que está dispon
 ## Exemplos
 
 Inclua um exemplo ou dois no diretório `examples` que demonstra como o seu
-Plugin funciona. Isso ajudará os desenvolvedores a utilizá-lo de dentro de suas
-aplicação.
-
+Plugin funciona.
 
 ## Development Tasks
 ```
@@ -199,7 +192,7 @@ Esse comando removerá todo o cache superflous, testando e construindo
 arquivos, renderizar a documentação e construir uma source distribution and a
 wheel distribution.
 
-para mais informacoes leia  `tasks.py`.
+para mais informacoes leia `tasks.py`.
 
 
 Ao desenvolver seu plugin, você deve se certificar de que suporta todas as versões do

@@ -1,12 +1,8 @@
-# Changelog
-All notable changes to this project will be documented in this file.
+# O que é um changelog?
+- Um changelog é um arquivo que contém uma lista selecionada, ordenada cronologicamente, de mudanças significativas para cada versão de um projeto.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+# Por que manter um changelog?
+- Para facilitar que usuários e contribuidores vejam precisamente quais mudanças significativas foram realizadas entre cada versão publicada de um projeto.
 
-## 1.0.0 (2018-07-24)
-
-### Added
-- Created plugin template and initial documentation
-
-
+# Quem precisa de um changelog?
+- Pessoas precisam. Seja consumidores ou desenvolvedores, os usuários finais de softwares são seres humanos que se preocupam com o que está no software. Quando o software muda, as pessoas querem saber por que e como.

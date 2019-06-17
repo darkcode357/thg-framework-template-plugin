@@ -208,7 +208,7 @@ cmd2 usa três estratégia de teste hierárquico para atingir esse objetivo.
 
 - [pytest](https://pytest.org) executa os testes unitários
 - [tox](https://tox.readthedocs.io/) executa os testes de unidade em várias versões de python
-- [AppVeyor](https://www.appveyor.com/) and [TravisCI](https://travis-ci.com)
+- [AppVeyor](https://www.appveyor.com/) e [TravisCI](https://travis-ci.com)
 executar os testes nas várias plataformas suportadas
 
 Este modelo de plug-in está configurado para usar a mesma estratégia.

@@ -72,8 +72,8 @@ observe como o plugin deve ser herdado antes do `cmd2.Cmd`. Isto é
 necessário por dois motivos:
 
 - O método `cmd.Cmd .__ init __ ()` na biblioteca padrão do python não ira ser chama
-  `super().__init__()`.Devido a esse descuido, se você não herdar do `MyPlugin` o
-  `MyPlugin.__init__()`método nunca será chamado
+  - `super().__init__()`.Devido a esse descuido, se você não herdar do `MyPlugin` o
+  - `MyPlugin.__init__()`método nunca será chamado
 - Você pode querer que seu plugin seja capaz de sobrescrever métodos  `cmd2.Cmd`.
   Se você herdar o plugin depois do `cmd2.Cmd`, a ordem de resolução dos métodos do python
   irá chamar os métodos `cmd2.Cmd` antes de chamar os metodos do seu plugin.

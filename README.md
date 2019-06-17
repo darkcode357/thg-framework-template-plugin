@@ -13,14 +13,14 @@
 
 ## Usando este template
 
-Este template assume que você está criando um novo plugin cmd2 chamado `myplugin`. Seu
+Este template assume que você está criando um novo plugin cmd2_thg_ chamado `myplugin`. Seu
 plugin terá um nome diferente. Você precisará renomear alguns dos arquivos e
 diretórios neste template. Não esqueça de modificar as importações e o `setup.py`.
 
-Você provavelmente também vai querer reescrever o README :)
+Você provavelmente também vai querer reescrever o README descrevendo oque o seu plugin pode fazer :)
+#gddev
 
-
-## Naming
+## nome 
 
 
 Você deve prefixar o nome do seu projeto com `cmd2-thg-`. Dentro desse projeto,
@@ -29,25 +29,26 @@ você deve ter um pacote com o prefixo `cmd2_thg_`.
 
 ## Adicionando funcionalidade
 
-Existem muitas maneiras de adicionar funcionalidades ao `thg` usando um plugin. A maioria dos plugins
+Existem muitas maneiras de adicionar funcionalidades ao `thg` usando um plugin. 
+A maioria dos plugins
 será implementado como um mixin. Um mixin é uma classe que encapsula e injeta
-codifique em outra classe. Desenvolvedores que usam um plugin em seu projeto `cmd2`,
+o código em outra classe(class principal). Desenvolvedores que usam um plugin no  `thg`,
 irá injetar o código do plugin em sua subclasse de `THGBASECONSOLE(Cmd):`.
 
 
 
 ### Mixin e Inicialização
 
-O exemplo a seguir mostra como e o inicio de um plugin e como o plugin e fica inicializado.
+O exemplo a seguir mostra como e o inicio de um plugin e como funciona o plugin
 
 Aqui está o plugin:
 
 ```python
 class MyPlugin:
     def __init__(self, *args, **kwargs):
-        # código colocado aqui é executado antes de cmd2.Cmd inicializar
+        # código colocado aqui é executado antes do cmd2.Cmd inicializar
         super().__init__(*args, **kwargs)
-        # O código colocado aqui é executado antes de cmd2.Cmd inicializar
+        # O código colocado aqui é executado antes do cmd2.Cmd inicializar
 
 ```
 
